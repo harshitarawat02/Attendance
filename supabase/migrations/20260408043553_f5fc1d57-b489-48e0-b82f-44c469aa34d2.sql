@@ -1,0 +1,1 @@
+ALTER TABLE public.attendance_records ADD CONSTRAINT attendance_records_session_student_unique UNIQUE (session_id, student_id);
