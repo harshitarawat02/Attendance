@@ -7,7 +7,7 @@ import {
   LayoutDashboard, ClipboardCheck, MapPin, FileText, BookOpen, Users, UserCircle, LogOut, Menu, X,
 } from "lucide-react";
 import { useState } from "react";
-
+import { ClipboardList } from "lucide-react";
 interface NavItem {
   label: string;
   path: string;
@@ -22,6 +22,12 @@ const navItems: NavItem[] = [
   { label: "Records", path: "/records", icon: <FileText className="h-5 w-5" />, roles: ["admin", "teacher", "student"] },
   { label: "Classes", path: "/classes", icon: <BookOpen className="h-5 w-5" />, roles: ["admin", "teacher"] },
   { label: "Users", path: "/users", icon: <Users className="h-5 w-5" />, roles: ["admin"] },
+  {
+  label: "Assignments",
+  path: "/assignments",
+  icon: <ClipboardList className="h-5 w-5" />,
+  roles: ["student", "admin", "teacher"],
+},
   { label: "Profile", path: "/profile", icon: <UserCircle className="h-5 w-5" />, roles: ["admin", "teacher", "student"] },
 ];
 

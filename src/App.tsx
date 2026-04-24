@@ -14,6 +14,7 @@ import ClassesPage from "./pages/ClassesPage";
 import UsersPage from "./pages/UsersPage";
 import ProfilePage from "./pages/ProfilePage";
 import NotFound from "./pages/NotFound";
+import Assignments from "./pages/Assignments";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/records" element={<ProtectedRoute allowedRoles={["admin", "teacher", "student"]}><Records /></ProtectedRoute>} />
             <Route path="/classes" element={<ProtectedRoute allowedRoles={["admin", "teacher"]}><ClassesPage /></ProtectedRoute>} />
             <Route path="/users" element={<ProtectedRoute allowedRoles={["admin"]}><UsersPage /></ProtectedRoute>} />
+            <Route path="/assignments"element={<ProtectedRoute allowedRoles={["student", "admin", "teacher"]}><Assignments /></ProtectedRoute>}/>
             <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
